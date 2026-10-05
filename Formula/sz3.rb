@@ -16,6 +16,14 @@ class Sz3 < Formula
     regex(/^v(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/szcompressor/homebrew-tap/releases/download/sz3-3.4.0"
+    rebuild 3
+    sha256 cellar: :any, arm64_tahoe:   "2fb596cf7b075f7759caca307045235690293fe66ae37eb34fcaf9ae20ab6e80"
+    sha256 cellar: :any, arm64_sequoia: "817f52961552e6773f7d4103b80505a7b659831f6c18ba13c806c2cd729d4e9b"
+    sha256 cellar: :any, x86_64_linux:  "9549cdc61e167452d0c9aaa5861b40675f078d5b6dd7bf423a64448445e171f0"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => :build
   depends_on "zstd"
