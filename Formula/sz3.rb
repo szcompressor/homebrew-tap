@@ -3,7 +3,7 @@ class Sz3 < Formula
   homepage "https://github.com/szcompressor/SZ3"
   url "https://github.com/szcompressor/SZ3.git",
       tag:      "v3.4.0",
-      revision: "9a1ce2045c7044d98fcaf10271aa2a0154748a0b"
+      revision: "8761742c5adc60e87eeb567c68ddda754d7268df"
   # The `:cannot_represent` is for copyright-and-BSD-license.txt, which is similar to
   # BSD-3-Clause-Attribution but asks that modifications be noted and words its acknowledgment clause differently.
   # include/SZ3/encoder/XtcBasedEncoder.hpp is LGPL-2.1-or-later.
