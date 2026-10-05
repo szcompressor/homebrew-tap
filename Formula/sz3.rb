@@ -9,6 +9,12 @@ class Sz3 < Formula
   license all_of: [:cannot_represent, "LGPL-2.1-or-later"]
   head "https://github.com/szcompressor/SZ3.git", branch: "master"
 
+  # the repository also has a 4.0.0alpha1 tag; releases are the v-prefixed ones
+  livecheck do
+    url :stable
+    regex(/^v(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => :build
   depends_on "zstd"
