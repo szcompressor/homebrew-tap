@@ -3,25 +3,15 @@ class Sz3 < Formula
   homepage "https://github.com/szcompressor/SZ3"
   url "https://github.com/szcompressor/SZ3.git",
       tag:      "v3.4.0",
-      revision: "8761742c5adc60e87eeb567c68ddda754d7268df"
-  # The `:cannot_represent` is for copyright-and-BSD-license.txt, which is similar to
-  # BSD-3-Clause-Attribution but asks that modifications be noted and words its acknowledgment clause differently.
-  # include/SZ3/encoder/XtcBasedEncoder.hpp is LGPL-2.1-or-later.
-  license all_of: [:cannot_represent, "LGPL-2.1-or-later"]
+      revision: "6141ed7879ad4812fa1e7d1c77e3459bd4baffc6"
+  # copyright-and-BSD-license.txt is similar to BSD-3-Clause-Attribution but asks that modifications be noted and
+  # words its acknowledgment clause differently.
+  license :cannot_represent
   head "https://github.com/szcompressor/SZ3.git", branch: "master"
 
-  # the repository also has a 4.0.0alpha1 tag; releases are the v-prefixed ones
   livecheck do
     url :stable
     regex(/^v(\d+(?:\.\d+)+)$/i)
-  end
-
-  bottle do
-    root_url "https://github.com/szcompressor/homebrew-tap/releases/download/sz3-3.4.0"
-    rebuild 3
-    sha256 cellar: :any, arm64_tahoe:   "2fb596cf7b075f7759caca307045235690293fe66ae37eb34fcaf9ae20ab6e80"
-    sha256 cellar: :any, arm64_sequoia: "817f52961552e6773f7d4103b80505a7b659831f6c18ba13c806c2cd729d4e9b"
-    sha256 cellar: :any, x86_64_linux:  "9549cdc61e167452d0c9aaa5861b40675f078d5b6dd7bf423a64448445e171f0"
   end
 
   depends_on "cmake" => [:build, :test]
