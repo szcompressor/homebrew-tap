@@ -1,9 +1,9 @@
 class Sz3 < Formula
   desc "Error-bounded lossy compressor for scientific floating-point data"
   homepage "https://github.com/szcompressor/SZ3"
-  url "https://github.com/szcompressor/SZ3.git",
-      tag:      "v3.4.0",
-      revision: "6141ed7879ad4812fa1e7d1c77e3459bd4baffc6"
+  url "https://github.com/szcompressor/SZ3/archive/ae48a399cfe20a95ae15adef8a8c1062eb057c29.tar.gz"
+  version "3.4.0"
+  sha256 "df030908e98f9a66dc06fcaed4d01eab065e4f9e535c496c3a3fabb72bb0c33a"
   # copyright-and-BSD-license.txt is similar to BSD-3-Clause-Attribution but asks that modifications be noted and
   # words its acknowledgment clause differently.
   license :cannot_represent
@@ -12,14 +12,6 @@ class Sz3 < Formula
   livecheck do
     url :stable
     regex(/^v(\d+(?:\.\d+)+)$/i)
-  end
-
-  bottle do
-    root_url "https://github.com/szcompressor/homebrew-tap/releases/download/sz3-3.4.0"
-    rebuild 4
-    sha256 cellar: :any, arm64_tahoe:   "80110f75efd0ec354e4f755047909e5958d563c25854cd7067114ac48f34eaf5"
-    sha256 cellar: :any, arm64_sequoia: "9ad56ff76c95386d0520d62490b67979297f9a97ee528ba81a013d8522351bb2"
-    sha256 cellar: :any, x86_64_linux:  "2e9716c0478a782139cf948cd61ede82e734cbefdc20a8d9db79ea3022919d47"
   end
 
   depends_on "cmake" => [:build, :test]
